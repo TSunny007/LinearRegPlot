@@ -25,7 +25,7 @@ def plot_poly(x,y,xE,yE,p):
     SSE= RMSE * RMSE
     title = "degree %s fit | SSE %0.3f" % (p, SSE) 
     plt.title(title)
-    file = "CVpolyReg2-%s.pdf" % p
+    file = "CVpolyReg-%s.pdf" % p
     plt.savefig(file, bbox_inches='tight') 
     plt.clf()
     plt.cla()
