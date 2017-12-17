@@ -12,9 +12,10 @@ from numpy import polyval
 from scipy import polyfit
 import random
 
+# This plots our results appropriately
 def plot_poly(x,y,xE,yE,p): 
-    plt.scatter(x,y, s=40, c="blue") 
-    plt.scatter(xE,yE, s=20, c="green") 
+    plt.scatter(x,y, s=30, c="blue") # training data
+    plt.scatter(xE,yE, s=20, c="green") # testing data
     plt.axis([0,1.5,0,3])
     s=sp.linspace(0,10,101)
     coefs=sp.polyfit(x,y,p)
@@ -41,9 +42,11 @@ yTrain = []
 xTest = []
 yTest = []
 
+TEST_SIZE = 10 #the size of our test size
+
 rands = set()
 # our testing data consists of 10 points (~10% of data provided)
-while len(rands) < 10:
+while len(rands) < TEST_SIZE:
     newRand = random.randint(0,98)
     if newRand not in rands:
         rands.add(newRand)
