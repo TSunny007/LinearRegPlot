@@ -23,7 +23,7 @@ def plot_poly(x,y,xE,yE,p):
     plt.plot(s,ffit(s),'r-',linewidth=2.0)
     resid = ffit(xE)
     RMSE = LA.norm(resid-yE)
-    SSE= RMSE * RMSE
+    SSE= RMSE * RMSE/ len(xE) # Dividing by number of test data points to get the average SSE
     title = "degree %s fit | SSE %0.3f" % (p, SSE) 
     plt.title(title)
     file = "CVpolyReg-%s.pdf" % p
